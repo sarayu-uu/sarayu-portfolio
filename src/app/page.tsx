@@ -689,13 +689,17 @@ function ProjectRow({ title, summary, stack, desc, bullets, github, image, image
   );
 }
 
+import { HiMenu, HiX } from "react-icons/hi"; // Import hamburger icons
+
 function FloatingNav({ ids, active }: { ids: string[]; active: string }) {
-  // Fixed overlay nav that becomes visible after the hero section
   const [visible, setVisible] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false); // State for mobile menu
+  const navRef = useRef<HTMLElement>(null); // Ref for the nav element
+
   useEffect(() => {
     const computeThreshold = () => {
       const hero = document.getElementById("hero");
-      return (hero?.offsetHeight || 0) - 8; // show just after the hero
+      return (hero?.offsetHeight || 0) - 8;
     };
 
     let threshold = computeThreshold();
@@ -718,30 +722,70 @@ function FloatingNav({ ids, active }: { ids: string[]; active: string }) {
     };
   }, []);
 
+  // Close menu when a link is clicked
+  const handleNavLinkClick = () => {
+    setMenuOpen(false);
+  };
+
+  // Close menu if clicked outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        setMenuOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [navRef]);
+
   return (
     <AnimatePresence>
       {visible && (
         <motion.nav
+          ref={navRef}
           initial={{ y: -12, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -12, opacity: 0 }}
           transition={{ duration: 0.2 }}
-          className="fixed top-3 inset-x-0 z-50"
+          className="fixed top-4 left-4 z-50"
         >
-          <div className="max-w-6xl mx-auto px-4">
-            <div className="bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/50 border border-black/10 shadow-sm rounded-full px-4 py-2 flex items-center justify-center">
-              <div className="flex gap-4 text-sm">
-                {ids.map((id) => (
-                  <a
-                    key={id}
-                    href={`#${id}`}
-                    className={`px-1 transition-colors ${active === id ? "text-black" : "text-neutral-600 hover:text-black"}`}
-                  >
-                    {id[0].toUpperCase() + id.slice(1)}
-                  </a>
-                ))}
-              </div>
-            </div>
+          <div className="relative">
+            {/* Hamburger Icon */}
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="size-12 rounded-full bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/50 border border-black/10 shadow-sm flex items-center justify-center text-neutral-600 hover:text-black hover:bg-neutral-100 transition-colors"
+              aria-label="Toggle navigation menu"
+            >
+              {menuOpen ? <HiX size={24} /> : <HiMenu size={24} />}
+            </button>
+
+            {/* Mobile Menu Overlay */}
+            <AnimatePresence>
+              {menuOpen && (
+                <motion.div
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -10 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute top-0 left-full ml-4 bg-white border border-black/10 shadow-lg rounded-xl py-2 min-w-[160px]"
+                >
+                  <div className="flex flex-col gap-2 text-sm">
+                    {ids.map((id) => (
+                      <a
+                        key={id}
+                        href={`#${id}`}
+                        className={`block px-4 py-2 transition-colors ${active === id ? "text-black font-semibold bg-neutral-50" : "text-neutral-700 hover:bg-neutral-50"}`}
+                        onClick={handleNavLinkClick}
+                      >
+                        {id[0].toUpperCase() + id.slice(1)}
+                      </a>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         </motion.nav>
       )}

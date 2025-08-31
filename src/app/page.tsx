@@ -218,6 +218,12 @@ export default function Home() {
       ],
       github: "https://github.com/sarayu-uu",
       image: "/project-pix.png", // Placeholder image
+      images: [
+        "/pix/pix.jpg",
+        "/pix/pix2.jpg",
+        "/pix/pix3.jpg",
+        "/pix/pix4.jpg",
+      ],
     },
     
     {

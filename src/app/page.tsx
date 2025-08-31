@@ -749,43 +749,64 @@ function FloatingNav({ ids, active }: { ids: string[]; active: string }) {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -12, opacity: 0 }}
           transition={{ duration: 0.2 }}
-          className="fixed top-4 left-4 z-50"
+          className="fixed z-50"
         >
-          <div className="relative">
-            {/* Hamburger Icon */}
-            <button
-              onClick={() => setMenuOpen(!menuOpen)}
-              className="size-12 rounded-full bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/50 border border-black/10 shadow-sm flex items-center justify-center text-neutral-600 hover:text-black hover:bg-neutral-100 transition-colors"
-              aria-label="Toggle navigation menu"
-            >
-              {menuOpen ? <HiX size={24} /> : <HiMenu size={24} />}
-            </button>
+          {/* Mobile Hamburger Menu */}
+          <div className="md:hidden fixed top-4 left-4">
+            <div className="relative">
+              <button
+                onClick={() => setMenuOpen(!menuOpen)}
+                className="size-12 rounded-full bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/50 border border-black/10 shadow-sm flex items-center justify-center text-neutral-600 hover:text-black hover:bg-neutral-100 transition-colors"
+                aria-label="Toggle navigation menu"
+              >
+                {menuOpen ? <HiX size={24} /> : <HiMenu size={24} />}
+              </button>
 
-            {/* Mobile Menu Overlay */}
-            <AnimatePresence>
-              {menuOpen && (
-                <motion.div
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -10 }}
-                  transition={{ duration: 0.2 }}
-                  className="absolute top-0 left-full ml-4 bg-white border border-black/10 shadow-lg rounded-xl py-2 min-w-[160px]"
-                >
-                  <div className="flex flex-col gap-2 text-sm">
-                    {ids.map((id) => (
-                      <a
-                        key={id}
-                        href={`#${id}`}
-                        className={`block px-4 py-2 transition-colors ${active === id ? "text-black font-semibold bg-neutral-50" : "text-neutral-700 hover:bg-neutral-50"}`}
-                        onClick={handleNavLinkClick}
-                      >
-                        {id[0].toUpperCase() + id.slice(1)}
-                      </a>
-                    ))}
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
+              <AnimatePresence>
+                {menuOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -10 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute top-0 left-full ml-4 bg-white border border-black/10 shadow-lg rounded-xl py-2 min-w-[160px]"
+                  >
+                    <div className="flex flex-col gap-2 text-sm">
+                      {ids.map((id) => (
+                        <a
+                          key={id}
+                          href={`#${id}`}
+                          className={`block px-4 py-2 transition-colors ${active === id ? "text-black font-semibold bg-neutral-50" : "text-neutral-700 hover:bg-neutral-50"}`}
+                          onClick={handleNavLinkClick}
+                        >
+                          {id[0].toUpperCase() + id.slice(1)}
+                        </a>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          </div>
+
+          {/* Desktop Glass Navbar */}
+          <div className="hidden md:block fixed top-3 inset-x-0">
+            <div className="max-w-6xl mx-auto px-4">
+              <div className="bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/50 border border-black/10 shadow-sm rounded-full px-4 py-2 flex items-center justify-center w-fit mx-auto">
+                <div className="flex gap-4 text-sm">
+                  {ids.map((id) => (
+                    <a
+                      key={id}
+                      href={`#${id}`}
+                      className={`px-1 transition-colors ${active === id ? "text-black" : "text-neutral-600 hover:text-black"}`}
+                      onClick={handleNavLinkClick}
+                    >
+                      {id[0].toUpperCase() + id.slice(1)}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </motion.nav>
       )}

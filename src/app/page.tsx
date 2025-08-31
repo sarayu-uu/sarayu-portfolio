@@ -80,6 +80,20 @@ const item: Variants = {
 };
 
 export default function Home() {
+  const [windowWidth, setWindowWidth] = useState(0);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    // Set initial width
+    setWindowWidth(window.innerWidth);
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   // Reusable Bento card
   function BentoCard({
     children,
@@ -243,6 +257,11 @@ export default function Home() {
 
   return (
     <div className={`min-h-screen bg-white text-neutral-900 font-sans ${inter.variable}`}>
+      {windowWidth > 0 && windowWidth < 768 && (
+        <div className="bg-neutral-200 text-neutral-800 text-center py-2 text-sm font-medium">
+          💡 Tip: View on desktop for best animations.
+        </div>
+      )}
       {/* Hero (Bento Grid) */}
       <section id="hero" className="px-6 pt-8 pb-12">
         <div className="max-w-6xl mx-auto">
@@ -465,6 +484,11 @@ export default function Home() {
             <span className="text-xs text-neutral-500 mt-1">sarayu-uu</span>
           </motion.a>
         </div>
+        {windowWidth > 0 && windowWidth < 768 && (
+          <p className="text-center text-xs text-neutral-500 mt-8">
+            P.S. — my website looks way cooler on a laptop.
+          </p>
+        )}
       </section>
     </div>
   );

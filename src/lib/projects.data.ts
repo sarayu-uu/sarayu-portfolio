@@ -86,7 +86,7 @@ export const projects: Project[] = [
     images: ["/RPS/rps1.jpg", "/RPS/rps2.jpg", "/RPS/rps3.jpg", "/RPS/rps4.jpg"],
   },
   {
-    title: "Yashashvi Collection [working]",
+    title: "Yashashvi Collection",
     summary: "Modern e-commerce frontend with responsive UI. Backend development is currently in progress.",
     stack: "Next.js | React | TypeScript | Tailwind CSS",
     desc: "Modern e-commerce frontend. Features: catalog, cart, wishlist, authentication, admin panel. Context API for global state. Currently working on finishing the backend part.",
@@ -109,8 +109,21 @@ export const projects: Project[] = [
       "Optimized performance and layout for responsive devices.",
     ],
     github: "https://github.com/sarayu-uu",
-    image: "/project-pix.png",
     images: ["/pix/pix.jpg", "/pix/pix2.jpg", "/pix/pix3.jpg", "/pix/pix4.jpg"],
+  },
+  {
+  "title": "Case Study Generator",
+  "summary": "A Next.js application that drafts structured case studies based on a given topic and tracks Gemini Flash token usage. It also supports exporting the generated case study to Google Docs.",
+  "stack": "Next.js | React | TypeScript | Google Generative AI | Google APIs",
+  "desc": "A modern web app that integrates with Google's Gemini Flash API to generate structured case studies and manage token usage efficiently, with an option to export results directly to Google Docs.",
+  "bullets": [
+    "Generates structured case studies from a user-provided topic.",
+    "Integrates with Google's Gemini Flash API for AI-powered content generation.",
+    "Monitors and displays Gemini Flash token usage against a hobby allowance.",
+    "Enables one-click export of generated case studies to Google Docs.",
+  ],
+  "github": "https://github.com/sarayu-uu/casestudy-generator",
+   images: ["/casestudy generator/cs1.jpg", "/casestudy generator/cs2.jpg", "/casestudy generator/cs3.jpg", "/casestudy generator/cs4.jpg"],
   },
   {
     title: "Portfolio Website [this very one]",
@@ -124,4 +137,6 @@ export const projects: Project[] = [
     ],
     github: "https://github.com/sarayu-uu",
   },
+  
+
 ];

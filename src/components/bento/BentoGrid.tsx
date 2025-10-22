@@ -55,7 +55,8 @@ export const BentoGrid = forwardRef<HTMLElement, BentoGridProps>(
               <li> Ride Smart (Online Tutoring Website)</li>
               <li> Pix (SPA with GSAP animations)</li>
               <li> Ride-Smart (HTML, CSS & JavaScript)</li>
-              <li> Yashashvi Collection (E-commerce frontend - backend in progress)</li>
+              <li> Yashasvi-Collection (frontend)</li>
+              <li> Case Study Generator (API integration, Google Apps Script)</li>
               <li> MyOrigins (HTML, CSS & JavaScript)</li>
               <li> [working on more]</li>
             </ul>
@@ -69,7 +70,7 @@ export const BentoGrid = forwardRef<HTMLElement, BentoGridProps>(
           >
             <h2 className="text-xl font-semibold mb-2">Skills</h2>
             <p className="text-neutral-700">
-              React · Next.js · TypeScript · Tailwind · GSAP · FIGMA · Python · HTML · CSS · JavaScript more to come
+              React · Next.js · TypeScript · Tailwind · GSAP · FIGMA · Python · HTML · CSS · JavaScript · APIs ·  more to come
             </p>
           </BentoCard>
 

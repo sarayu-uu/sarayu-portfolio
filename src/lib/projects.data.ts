@@ -117,10 +117,10 @@ export const projects: Project[] = [
   "stack": "Next.js | React | TypeScript | Google Generative AI | Google APIs",
   "desc": "A modern web app that integrates with Google's Gemini Flash API to generate structured case studies and manage token usage efficiently, with an option to export results directly to Google Docs.",
   "bullets": [
-    "Generates structured case studies from a user-provided topic.",
-    "Integrates with Google's Gemini Flash API for AI-powered content generation.",
+    "Built a platform that generates business case studies, canvases, and Google Docs",
+    "Integrated Gemini API, Google Apps Script, and Markdown editor.",
     "Monitors and displays Gemini Flash token usage against a hobby allowance.",
-    "Enables one-click export of generated case studies to Google Docs.",
+    "Automated report creation, cutting manual work time by about 80%",
   ],
   "github": "https://github.com/sarayu-uu/casestudy-generator",
    images: ["/casestudy generator/cs1.jpg", "/casestudy generator/cs2.jpg", "/casestudy generator/cs3.jpg", "/casestudy generator/cs4.jpg"],

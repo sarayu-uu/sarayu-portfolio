@@ -8,6 +8,7 @@ import {
   FiExternalLink,
 } from "react-icons/fi";
 import { FaGithub } from "react-icons/fa";
+import { SiHtml5, SiNextdotjs, SiOpencv, SiPython, SiReact } from "react-icons/si";
 import { container, item } from "@/lib/motion";
 import { useState } from "react";
 import type { Project } from "@/lib/projects.data";
@@ -28,6 +29,42 @@ const FigmaBadgeIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
+type ProjectBadgeType = NonNullable<Project["badgeType"]>;
+
+const getBadgeMeta = (badgeType: ProjectBadgeType) => {
+  switch (badgeType) {
+    case "figma":
+      return { label: "Figma", icon: <FigmaBadgeIcon className="h-3" /> };
+    case "html":
+      return {
+        label: "HTML/CSS/JS",
+        icon: <SiHtml5 className="text-[#E34F26] text-sm" />,
+      };
+    case "reactNext":
+      return {
+        label: "Next.js + React",
+        icon: (
+          <span className="flex items-center gap-0.5">
+            <SiNextdotjs className="text-[12px] text-neutral-900" />
+            <SiReact className="text-[#61DAFB] text-[12px]" />
+          </span>
+        ),
+      };
+    case "opencv":
+      return {
+        label: "OpenCV",
+        icon: <SiOpencv className="text-[#5C3EE8] text-sm" />,
+      };
+    case "python":
+      return {
+        label: "Python",
+        icon: <SiPython className="text-[#3776AB] text-sm" />,
+      };
+    default:
+      return null;
+  }
+};
+
 export function ProjectRow({
   title,
   summary,
@@ -40,10 +77,10 @@ export function ProjectRow({
   defaultOpen = false,
   linkType = "github",
   linkLabel,
+  badgeType,
 }: Project) {
   const [open, setOpen] = useState(defaultOpen);
   const [currentPage, setCurrentPage] = useState(0);
-
   const numPages = images ? Math.ceil(images.length / 2) : 0;
   const resolvedLinkLabel =
     linkLabel ??
@@ -58,6 +95,9 @@ export function ProjectRow({
       : linkType === "external"
       ? FiExternalLink
       : FaGithub;
+  const resolvedBadgeType =
+    badgeType ?? (linkType === "figma" ? "figma" : undefined);
+  const badgeMeta = resolvedBadgeType ? getBadgeMeta(resolvedBadgeType) : null;
 
   const handlePrevImage = () => {
     if (images && numPages > 0) {
@@ -83,9 +123,10 @@ export function ProjectRow({
         <div>
           <div className="flex items-center gap-2">
             <h3 className="text-base font-semibold">{title}</h3>
-            {linkType === "figma" && (
+            {badgeMeta && (
               <span className="inline-flex items-center gap-1 rounded-full bg-black/5 px-2 py-0.5 text-[11px] font-medium uppercase tracking-wide text-neutral-700">
-                <FigmaBadgeIcon /> Figma
+                {badgeMeta.icon}
+                {badgeMeta.label}
               </span>
             )}
           </div>
@@ -188,7 +229,7 @@ export function ProjectRow({
                 rel="noreferrer"
                 className="inline-flex items-center text-sm underline text-neutral-800 hover:text-black"
               >
-                <LinkIcon className="mr-2" />
+                <LinkIcon className="mr-2 h-4 w-4" />
                 {resolvedLinkLabel}
               </a>
             </div>

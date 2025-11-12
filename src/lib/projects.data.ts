@@ -7,6 +7,7 @@
   github: string;
   linkType?: "github" | "figma" | "external";
   linkLabel?: string;
+  badgeType?: "figma" | "html" | "reactNext" | "opencv" | "python";
   image?: string;
   images?: string[];
   defaultOpen?: boolean;
@@ -78,6 +79,7 @@ export const projects: Project[] = [
       "Improved understanding of responsive web design principles.",
     ],
     github: "https://github.com/sarayu-uu",
+    badgeType: "html",
     images: [
       "/myorigin/myorigins1.jpg",
       "/myorigin/myorigins2.jpg",
@@ -97,6 +99,7 @@ export const projects: Project[] = [
       "Improved knowledge of UI/UX principles for online platforms.",
     ],
     github: "https://github.com/sarayu-uu",
+    badgeType: "html",
     images: [
       "/ride-smart/ride-smart1.jpg",
       "/ride-smart/ride-smart2.jpg",
@@ -117,6 +120,7 @@ export const projects: Project[] = [
       "Practiced designing a user-facing ML tool with healthcare focus.",
     ],
     github: "https://github.com/sarayu-uu",
+    badgeType: "python",
     images: [
       "/HBCR/breastcancer-riskassessment.jpg",
       "/HBCR/breastcancer-riskassessment1.jpg",
@@ -138,6 +142,7 @@ export const projects: Project[] = [
       "Explored statistics visualization for gameplay analytics.",
     ],
     github: "https://github.com/sarayu-uu",
+    badgeType: "opencv",
     images: ["/RPS/rps1.jpg", "/RPS/rps2.jpg", "/RPS/rps3.jpg", "/RPS/rps4.jpg"],
   },
   {
@@ -151,6 +156,7 @@ export const projects: Project[] = [
       "Designed clean, responsive UI with Tailwind and reusable UI primitives.",
     ],
     github: "https://github.com/sarayu-uu",
+    badgeType: "reactNext",
     images: ["/yashashvi/y1.jpg", "/yashashvi/y2.jpg", "/yashashvi/y3.jpg", "/yashashvi/y4.jpg"],
   },
   {
@@ -164,6 +170,7 @@ export const projects: Project[] = [
       "Optimized performance and layout for responsive devices.",
     ],
     github: "https://github.com/sarayu-uu",
+    badgeType: "reactNext",
     images: ["/pix/pix.jpg", "/pix/pix2.jpg", "/pix/pix3.jpg", "/pix/pix4.jpg"],
   },
   {
@@ -178,6 +185,7 @@ export const projects: Project[] = [
     "Automated report creation, cutting manual work time by about 80%",
   ],
   "github": "https://github.com/sarayu-uu/casestudy-generator",
+  "badgeType": "reactNext",
    images: ["/casestudy generator/cs1.jpg", "/casestudy generator/cs2.jpg", "/casestudy generator/cs3.jpg", "/casestudy generator/cs4.jpg"],
   },
   {
@@ -191,5 +199,6 @@ export const projects: Project[] = [
       "Designed and implemented a minimalistic contact section with animated icons.",
     ],
     github: "https://github.com/sarayu-uu",
+    badgeType: "reactNext",
   },
 ];

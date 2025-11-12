@@ -14,6 +14,59 @@
 
 export const projects: Project[] = [
   {
+    title: "athENA (SIH hackathon)",
+    summary: "Figma exploration for a student-focused productivity companion.",
+    stack: "Figma | Product Design | UI/UX",
+    desc: "A multi-screen Figma prototype that maps the athENA experience - from onboarding flows to daily focus sessions - highlighting typography, color systems, and interaction states tailored for learners.",
+    bullets: [
+      "Documented user journeys for planning, tracking, and reflection loops.",
+      "Applied auto-layout and design tokens for consistent cards, stats, and modals.",
+      "Linked screens with micro-interactions to simulate a polished prototype demo.",
+    ],
+    github: "https://www.figma.com/design/VftKwPLGOEm6bsu2aeoJUo/athENA?node-id=0-1&t=hwoycZvbEopDjBuR-1",
+    linkType: "figma",
+    linkLabel: "Open athENA in Figma",
+  },
+  {
+    title: "Conversational Agent UI",
+    summary: "Chatbot interface concept exploring chat flows and quick actions.",
+    stack: "Figma | UI/UX | Interaction Design",
+    desc: "A minimalist chatbot UI designed entirely in Figma, focusing on message hierarchy, smart suggestions, and responsive spacing that can be carried into a real build.",
+    bullets: [
+      "Crafted desktop layouts with shared components.",
+      "Experimented with chip-based prompts and shortcut rows for efficiency.",
+    ],
+    github: "https://www.figma.com/design/9yeLk4F4mUxXhFolcdBDoq/Untitled?node-id=0-1&t=Y4MoEYFSavCAcPGQ-1",
+    linkType: "figma",
+    linkLabel: "Open chatbot UI in Figma",
+  },
+  {
+    title: "myorigins.ai",
+    summary: "Figma system for the MyOrigins AI storytelling brand.",
+    stack: "Figma | Design Systems",
+    desc: "A complementary Figma file to the MyOrigins build that explores the visual identity, component library, and hero storytelling frames before development.",
+    bullets: [
+      "Built a reusable hero, testimonial, and feature section kit.",
+      "Defined color ramps, gradients, and type scales for both light/dark use.",
+    ],
+    github: "https://www.figma.com/design/GxXo8ryxF2Cuh9XpnC3XR8/myorigins.ai?node-id=0-1&t=pXuMnAZEtdBfSCjP-1",
+    linkType: "figma",
+    linkLabel: "Open myorigins.ai in Figma",
+  },
+  {
+    title: "My Family (Playful Attempt)",
+    summary: "A light-hearted Figma attempt that experiments with illustration grids.",
+    stack: "Figma | Visual Exploration",
+    desc: "A fun exploratory file that uses Figma components to capture family stories through bright color blocking, simple avatars, and caption cards.",
+    bullets: [
+      "Practiced creating reusable avatar components with swap-able features.",
+      "Added playful annotations so the prototype tells a narrative on scroll.",
+    ],
+    github: "https://www.figma.com/design/4EU7OtIrncQwUMkNXnNUw8/my-family?node-id=0-1&t=8sNFNlk0SL7PHp3G-1",
+    linkType: "figma",
+    linkLabel: "Open My Family in Figma",
+  },
+  {
     title: "MyOrigins Website",
     summary:
       "My first project built using HTML, CSS, and JavaScript. Focused on animations and creative layouts.",
@@ -139,58 +192,4 @@ export const projects: Project[] = [
     ],
     github: "https://github.com/sarayu-uu",
   },
-  {
-    title: "athENA (SIH hackathon)",
-    summary: "Figma exploration for a student-focused productivity companion.",
-    stack: "Figma | Product Design | UI/UX",
-    desc: "A multi-screen Figma prototype that maps the athENA experience - from onboarding flows to daily focus sessions - highlighting typography, color systems, and interaction states tailored for learners.",
-    bullets: [
-      "Documented user journeys for planning, tracking, and reflection loops.",
-      "Applied auto-layout and design tokens for consistent cards, stats, and modals.",
-      "Linked screens with micro-interactions to simulate a polished prototype demo.",
-    ],
-    github: "https://www.figma.com/design/VftKwPLGOEm6bsu2aeoJUo/athENA?node-id=0-1&t=hwoycZvbEopDjBuR-1",
-    linkType: "figma",
-    linkLabel: "Open athENA in Figma",
-  },
-  {
-    title: "Conversational Agent UI",
-    summary: "Chatbot interface concept exploring chat flows and quick actions.",
-    stack: "Figma | UI/UX | Interaction Design",
-    desc: "A minimalist chatbot UI designed entirely in Figma, focusing on message hierarchy, smart suggestions, and responsive spacing that can be carried into a real build.",
-    bullets: [
-      "Crafted desktop layouts with shared components.",
-      "Experimented with chip-based prompts and shortcut rows for efficiency.",
-    ],
-    github: "https://www.figma.com/design/9yeLk4F4mUxXhFolcdBDoq/Untitled?node-id=0-1&t=Y4MoEYFSavCAcPGQ-1",
-    linkType: "figma",
-    linkLabel: "Open chatbot UI in Figma",
-  },
-  {
-    title: "myorigins.ai",
-    summary: "Figma system for the MyOrigins AI storytelling brand.",
-    stack: "Figma | Design Systems",
-    desc: "A complementary Figma file to the MyOrigins build that explores the visual identity, component library, and hero storytelling frames before development.",
-    bullets: [
-      "Built a reusable hero, testimonial, and feature section kit.",
-      "Defined color ramps, gradients, and type scales for both light/dark use.",
-    ],
-    github: "https://www.figma.com/design/GxXo8ryxF2Cuh9XpnC3XR8/myorigins.ai?node-id=0-1&t=pXuMnAZEtdBfSCjP-1",
-    linkType: "figma",
-    linkLabel: "Open myorigins.ai in Figma",
-  },
-  {
-    title: "My Family (Playful Attempt)",
-    summary: "A light-hearted Figma attempt that experiments with illustration grids.",
-    stack: "Figma | Visual Exploration",
-    desc: "A fun exploratory file that uses Figma components to capture family stories through bright color blocking, simple avatars, and caption cards.",
-    bullets: [
-      "Practiced creating reusable avatar components with swap-able features.",
-      "Added playful annotations so the prototype tells a narrative on scroll.",
-    ],
-    github: "https://www.figma.com/design/4EU7OtIrncQwUMkNXnNUw8/my-family?node-id=0-1&t=8sNFNlk0SL7PHp3G-1",
-    linkType: "figma",
-    linkLabel: "Open My Family in Figma",
-  },
-
 ];

@@ -1,11 +1,32 @@
 ﻿"use client";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
-import { FiChevronDown, FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import {
+  FiChevronDown,
+  FiChevronLeft,
+  FiChevronRight,
+  FiExternalLink,
+} from "react-icons/fi";
 import { FaGithub } from "react-icons/fa";
 import { container, item } from "@/lib/motion";
 import { useState } from "react";
 import type { Project } from "@/lib/projects.data";
+
+const FigmaBadgeIcon = ({ className }: { className?: string }) => (
+  <svg
+    width="12"
+    height="16"
+    viewBox="0 0 12 16"
+    aria-hidden="true"
+    className={`shrink-0${className ? ` ${className}` : ""}`}
+  >
+    <circle cx="4" cy="3" r="2.5" fill="#F24E1E" />
+    <circle cx="8" cy="3" r="2.5" fill="#A259FF" />
+    <circle cx="4" cy="8" r="2.5" fill="#FF7262" />
+    <circle cx="8" cy="8" r="2.5" fill="#1ABCFE" />
+    <circle cx="4" cy="13" r="2.5" fill="#0ACF83" />
+  </svg>
+);
 
 export function ProjectRow({
   title,
@@ -17,11 +38,26 @@ export function ProjectRow({
   image,
   images,
   defaultOpen = false,
+  linkType = "github",
+  linkLabel,
 }: Project) {
   const [open, setOpen] = useState(defaultOpen);
   const [currentPage, setCurrentPage] = useState(0);
 
   const numPages = images ? Math.ceil(images.length / 2) : 0;
+  const resolvedLinkLabel =
+    linkLabel ??
+    (linkType === "figma"
+      ? "Open in Figma"
+      : linkType === "external"
+      ? "Open Project"
+      : "View on GitHub");
+  const LinkIcon =
+    linkType === "figma"
+      ? FigmaBadgeIcon
+      : linkType === "external"
+      ? FiExternalLink
+      : FaGithub;
 
   const handlePrevImage = () => {
     if (images && numPages > 0) {
@@ -45,7 +81,14 @@ export function ProjectRow({
         aria-expanded={open}
       >
         <div>
-          <h3 className="text-base font-semibold">{title}</h3>
+          <div className="flex items-center gap-2">
+            <h3 className="text-base font-semibold">{title}</h3>
+            {linkType === "figma" && (
+              <span className="inline-flex items-center gap-1 rounded-full bg-black/5 px-2 py-0.5 text-[11px] font-medium uppercase tracking-wide text-neutral-700">
+                <FigmaBadgeIcon /> Figma
+              </span>
+            )}
+          </div>
           {summary && <p className="text-sm text-neutral-600">{summary}</p>}
           <p className="text-sm text-neutral-500">{stack}</p>
         </div>
@@ -145,7 +188,8 @@ export function ProjectRow({
                 rel="noreferrer"
                 className="inline-flex items-center text-sm underline text-neutral-800 hover:text-black"
               >
-                <FaGithub className="mr-2" /> View on GitHub
+                <LinkIcon className="mr-2" />
+                {resolvedLinkLabel}
               </a>
             </div>
           </motion.div>

@@ -58,7 +58,7 @@ export const BentoGrid = forwardRef<HTMLElement, BentoGridProps>(
               <li> Yashasvi-Collection (frontend)</li>
               <li> Case Study Generator (API integration, Google Apps Script)</li>
               <li> MyOrigins (HTML, CSS & JavaScript)</li>
-              <li> [working on more]</li>
+              <li> Figma designs</li>
             </ul>
           </BentoCard>
 

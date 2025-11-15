@@ -5,6 +5,7 @@ import { BentoCard } from "./BentoCard";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import React, { forwardRef } from "react";
+import { useResumeDownload } from "@/hooks/useResumeDownload";
 
 interface BentoGridProps {
   windowWidth: number;
@@ -12,12 +13,14 @@ interface BentoGridProps {
 
 export const BentoGrid = forwardRef<HTMLElement, BentoGridProps>(
   ({ windowWidth }, ref) => {
+    const { isDownloading, downloadResume } = useResumeDownload();
+
     return (
       <section id="hero" ref={ref} className="px-6 pt-8 pb-12">
         <div className="max-w-6xl mx-auto">
         {windowWidth > 0 && windowWidth < 768 && (
           <div className="bg-neutral-200 text-neutral-800 text-center py-2 text-sm font-medium">
-            ?? Tip: View on desktop for best animations.
+            ⚡ Tip: View on desktop for best animations.
           </div>
         )}
 
@@ -35,7 +38,8 @@ export const BentoGrid = forwardRef<HTMLElement, BentoGridProps>(
           >
             <h2 className="text-xl font-semibold mb-4">About Me</h2>
             <p className="text-neutral-700 text-sm sm:text-base leading-relaxed">
-              Hi, I am Sarayu, a CSE student from ICFAI Tech, Hyderabad, passionate about creating clean and intuitive digital experiences. I began with frontend development because it allowed me to combine creativity with logic, and my projects and internships helped me learn how to turn ideas into real solutions. I actively use <strong>AI tools</strong> to accelerate my learning, explore better approaches, and strengthen my skills as a developer. I am now looking to grow into full-stack and software development, and I hope to find an opportunity where I can learn, contribute, and build meaningful systems.             </p>
+              Hi, I am Sarayu, a CSE student from ICFAI Tech, Hyderabad, passionate about creating clean and intuitive digital experiences. I began with frontend development because it allowed me to combine creativity with logic, and my projects and internships helped me learn how to turn ideas into real solutions. I actively use <strong>AI tools</strong> to accelerate my learning, explore better approaches, and strengthen my skills as a developer. I am now looking to grow into full-stack and software development, and I hope to find an opportunity where I can learn, contribute, and build meaningful systems.
+            </p>
           </BentoCard>
 
           <BentoCard
@@ -69,7 +73,7 @@ export const BentoGrid = forwardRef<HTMLElement, BentoGridProps>(
           >
             <h2 className="text-xl font-semibold mb-2">Skills</h2>
             <p className="text-neutral-700">
-              React · Next.js · TypeScript · Tailwind · GSAP · FIGMA · Python · HTML · CSS · JavaScript · APIs ·  more to come
+              React · Next.js · TypeScript · Tailwind · GSAP · FIGMA · Python · HTML · CSS · JavaScript · APIs · more to come
             </p>
           </BentoCard>
 
@@ -81,10 +85,10 @@ export const BentoGrid = forwardRef<HTMLElement, BentoGridProps>(
           >
             <h2 className="text-xl font-semibold mb-2">Experience</h2>
             <p className="text-neutral-700 text-sm sm:text-base">
-              Software Developer Intern  — <span className="text-xs sm:text-sm italic"><br />NorthNorth (Aug 2025 – Present)</span>
+              Software Developer Intern — <span className="text-xs sm:text-sm italic"><br />NorthNorth (Aug 2025 - Present)</span>
             </p>
             <p className="text-neutral-700 text-sm sm:text-base">
-              Frontend Intern  — <span className="text-xs sm:text-sm italic"><br />Cloudbox-99 (Jun 2024 – Aug 2024)</span>
+              Frontend Intern — <span className="text-xs sm:text-sm italic"><br />Cloudbox-99 (Jun 2024 - Aug 2024)</span>
             </p>
           </BentoCard>
 
@@ -94,8 +98,8 @@ export const BentoGrid = forwardRef<HTMLElement, BentoGridProps>(
             }
             className="lg:col-start-1 lg:row-start-3 lg:col-span-3 lg:row-span-1 p-2 overflow-hidden"
           >
-            <h2 className="text-base font-semibold mb-0">Let’s Connect</h2>
-            <div className="text-neutral-700 flex flex-row items-center gap-3 justify-center">
+            <h2 className="text-base font-semibold mb-0">Let&rsquo;s Connect</h2>
+            <div className="text-neutral-700 flex flex-row flex-wrap items-center gap-3 justify-center">
               <a
                 href="https://linkedin.com/in/sarayu-ramdas/"
                 target="_blank"
@@ -119,6 +123,14 @@ export const BentoGrid = forwardRef<HTMLElement, BentoGridProps>(
                 <MdEmail className="mr-2" /> Email
               </a>
             </div>
+            <button
+              type="button"
+              onClick={downloadResume}
+              className="mt-4 inline-flex items-center justify-center gap-2 rounded-full border border-black/10 bg-black text-white px-4 py-2 text-xs font-semibold shadow-sm transition hover:-translate-y-0.5 hover:bg-black/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-black/40 disabled:cursor-not-allowed disabled:opacity-80"
+              disabled={isDownloading}
+            >
+              {isDownloading ? "Preparing download..." : "Download Resume"}
+            </button>
           </BentoCard>
         </motion.div>
       </div>

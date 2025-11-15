@@ -12,9 +12,9 @@ export function AboutSection() {
         className="space-y-4"
       >
         <p className="text-lg leading-relaxed text-neutral-700">
-        I'm Sarayu, a final-year CSE student at ICFAI Tech School, Hyderabad. I've just completed my exams and am now looking for an internship where I can apply what I've learned so far. I started with frontend development because it let me blend creativity with logic, and now I'm steadily expanding toward full-stack and broader software development.        </p>
+        I&rsquo;m Sarayu, a final-year CSE student at ICFAI Tech School, Hyderabad. I&rsquo;ve just completed my exams and am now looking for an internship where I can apply what I&rsquo;ve learned so far. I started with frontend development because it let me blend creativity with logic, and now I&rsquo;m steadily expanding toward full-stack and broader software development.        </p>
         <p className="text-lg leading-relaxed text-neutral-700">
-        I've realized that I learn best when I'm part of a team that shares ideas, mentors growth, and tackles challenges together. With the right guidance and environment, I'm confident I can excel - and I'm hoping to find a place where I can contribute meaningfully while continuing to grow.        </p>
+        I&rsquo;ve realized that I learn best when I&rsquo;m part of a team that shares ideas, mentors growth, and tackles challenges together. With the right guidance and environment, I&rsquo;m confident I can excel - and I&rsquo;m hoping to find a place where I can contribute meaningfully while continuing to grow.        </p>
       </motion.div>
     </section>
   );

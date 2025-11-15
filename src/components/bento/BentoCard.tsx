@@ -20,7 +20,9 @@ export function BentoCard({ children, onClick, className }: BentoCardProps) {
       className={`relative bg-white rounded-2xl p-6 focus:outline-none h-full overflow-hidden ${className ?? ""}`}
     >
       <div className="absolute inset-0 rounded-2xl border border-dashed border-black/20 pointer-events-none" />
-      <div className="flex h-full w-full flex-col items-start justify-start text-left relative z-10">{children}</div>
+      <div className="flex h-full w-full flex-col items-start justify-start text-left relative z-10">
+        {children}
+      </div>
     </motion.button>
   );
 }

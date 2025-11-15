@@ -35,8 +35,7 @@ export const BentoGrid = forwardRef<HTMLElement, BentoGridProps>(
           >
             <h2 className="text-xl font-semibold mb-4">About Me</h2>
             <p className="text-neutral-700 text-sm sm:text-base leading-relaxed">
-              I am a Computer Science and Engineering student at ICFAI Tech, Hyderabad, driven by a passion for building intuitive and purposeful digital experiences. Starting with frontend development has allowed me to express my creativity through design and interactivity, while internships and projects have strengthened my ability to collaborate and deliver solutions in real-world settings. Looking ahead, I aspire to expand into full-stack and software development, growing beyond interfaces to craft complete, impactful systems that bridge design, engineering, and user needs.
-            </p>
+              Hi, I am Sarayu, a CSE student from ICFAI Tech, Hyderabad, passionate about creating clean and intuitive digital experiences. I began with frontend development because it allowed me to combine creativity with logic, and my projects and internships helped me learn how to turn ideas into real solutions. I actively use <strong>AI tools</strong> to accelerate my learning, explore better approaches, and strengthen my skills as a developer. I am now looking to grow into full-stack and software development, and I hope to find an opportunity where I can learn, contribute, and build meaningful systems.             </p>
           </BentoCard>
 
           <BentoCard

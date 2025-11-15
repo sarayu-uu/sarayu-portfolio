@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import { motion } from "framer-motion";
 
 export function AboutSection() {
@@ -12,11 +12,9 @@ export function AboutSection() {
         className="space-y-4"
       >
         <p className="text-lg leading-relaxed text-neutral-700">
-          I am in my final year of Bachelor of Technology in Computer Science and Engineering at ICFAI Tech School, Hyderabad. Over the course of my studies, I have built a strong foundation in software development and problem-solving, while internships and projects have shown me how to translate those concepts into practical, impactful solutions. Beginning with frontend development as a way to combine creativity with logic, I am now focused on expanding my skills toward full-stack and software development.
-        </p>
+        I'm Sarayu, a final-year CSE student at ICFAI Tech School, Hyderabad. I've just completed my exams and am now looking for an internship where I can apply what I've learned so far. I started with frontend development because it let me blend creativity with logic, and now I'm steadily expanding toward full-stack and broader software development.        </p>
         <p className="text-lg leading-relaxed text-neutral-700">
-          I believe that learning never stops, and the best progress happens when working with teams that share ideas and solve challenges together. My experiences have taught me that every project is more than a deliverable — it is an opportunity to grow, adapt, and refine both technical and collaborative skills. I see my journey as one of continuous improvement, preparing myself to contribute meaningfully to products and systems that matter.
-        </p>
+        I've realized that I learn best when I'm part of a team that shares ideas, mentors growth, and tackles challenges together. With the right guidance and environment, I'm confident I can excel - and I'm hoping to find a place where I can contribute meaningfully while continuing to grow.        </p>
       </motion.div>
     </section>
   );

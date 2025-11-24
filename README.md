@@ -8,6 +8,12 @@
 - **React**: A JavaScript library for building user interfaces.
 - **Tailwind CSS**: A utility-first CSS framework for rapidly styling web applications.
 
+## React Elements Used
+
+- **Hooks:** useState, useEffect, useLayoutEffect, useRef, useMemo, useCallback
+- **Animation:** Framer Motion variants and interactions
+- **UI building blocks:** BentoGrid/BentoCard layout, MagneticCursorChip, ExperienceCard with GSAP scroll animation, SkillsCluster, ProjectRow, Navbar, Contact/About/Experience sections
+
 ## Project Structure
 
 The project is structured as a standard Next.js application:

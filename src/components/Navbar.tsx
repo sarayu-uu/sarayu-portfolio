@@ -60,7 +60,7 @@ export default function Navbar({ isVisible }: NavbarProps) {
           <li key={link.name}>
             <Link
               href={link.href}
-              className="text-base font-semibold tracking-tight text-black transition-colors hover:text-blue-500 md:text-lg"
+              className="text-base font-semibold tracking-tight text-black transition-colors hover:text-red-500 md:text-lg"
             >
               {link.name}
             </Link>

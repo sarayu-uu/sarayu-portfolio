@@ -1,7 +1,7 @@
 ﻿"use client";
 import { motion } from "framer-motion";
 import { item } from "@/lib/motion";
-import type { ReactNode } from "react";
+import type { ReactNode, KeyboardEvent } from "react";
 
 type BentoCardProps = {
   children: ReactNode;
@@ -10,11 +10,20 @@ type BentoCardProps = {
 };
 
 export function BentoCard({ children, onClick, className }: BentoCardProps) {
+  const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      onClick();
+    }
+  };
+
   return (
-    <motion.button
-      type="button"
+    <motion.div
       variants={item}
       onClick={onClick}
+      role="button"
+      tabIndex={0}
+      onKeyDown={handleKeyDown}
       whileHover={{ scale: 1.02, boxShadow: "0 10px 30px rgba(0,0,0,0.08)" }}
       transition={{ type: "spring", stiffness: 300, damping: 22 }}
       className={`relative bg-white rounded-2xl p-6 focus:outline-none h-full overflow-hidden ${className ?? ""}`}
@@ -23,6 +32,6 @@ export function BentoCard({ children, onClick, className }: BentoCardProps) {
       <div className="flex h-full w-full flex-col items-start justify-start text-left relative z-10">
         {children}
       </div>
-    </motion.button>
+    </motion.div>
   );
 }

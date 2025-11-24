@@ -3,20 +3,25 @@ import { motion } from "framer-motion";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { MdEmail, MdPhone } from "react-icons/md";
 
+const EMAIL_ADDRESS = "sarayu.ramdas04@gmail.com";
+const GMAIL_COMPOSE_URL = `https://mail.google.com/mail/?view=cm&fs=1&to=${EMAIL_ADDRESS}`;
+
 export function ContactSection({ windowWidth }: { windowWidth: number }) {
   return (
     <section id="contact" className="max-w-6xl mx-auto px-6 py-24 pb-28">
       <h2 className="text-2xl font-semibold mb-8">Contact</h2>
       <div className="flex flex-wrap justify-center gap-8 sm:gap-12">
         <motion.a
-          href="mailto:sarayu.ramdas04@gmail.com"
+          href={GMAIL_COMPOSE_URL}
           className="flex flex-col items-center text-neutral-700 hover:text-neutral-900 transition-colors duration-200 group"
           whileHover={{ y: -5, scale: 1.05 }}
           transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          target="_blank"
+          rel="noreferrer"
         >
           <MdEmail className="text-5xl mb-2 group-hover:text-neutral-900 transition-colors duration-200" />
           <span className="text-sm text-neutral-600 group-hover:text-neutral-800 transition-colors duration-200">Email</span>
-          <span className="text-xs text-neutral-500 mt-1">sarayu.ramdas04@gmail.com</span>
+          <span className="text-xs text-neutral-500 mt-1">{EMAIL_ADDRESS}</span>
         </motion.a>
 
         <motion.a

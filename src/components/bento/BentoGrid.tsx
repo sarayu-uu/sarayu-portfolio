@@ -7,13 +7,16 @@ import { MdEmail } from "react-icons/md";
 import React, { forwardRef } from "react";
 import { useResumeDownload } from "@/hooks/useResumeDownload";
 
+const EMAIL_ADDRESS = "sarayu.ramdas04@gmail.com";
+const GMAIL_COMPOSE_URL = `https://mail.google.com/mail/?view=cm&fs=1&to=${EMAIL_ADDRESS}`;
+
 interface BentoGridProps {
   windowWidth: number;
 }
 
 export const BentoGrid = forwardRef<HTMLElement, BentoGridProps>(
   ({ windowWidth }, ref) => {
-    const { isDownloading, downloadResume } = useResumeDownload();
+    const { resumeUrl, resumeDownloadUrl } = useResumeDownload();
 
     return (
       <section id="hero" ref={ref} className="px-6 pt-8 pb-12">
@@ -38,7 +41,7 @@ export const BentoGrid = forwardRef<HTMLElement, BentoGridProps>(
           >
             <h2 className="text-xl font-semibold mb-4">About Me</h2>
             <p className="text-neutral-700 text-sm sm:text-base leading-relaxed">
-              Hi, I am Sarayu, a CSE student from ICFAI Tech, Hyderabad, passionate about creating clean and intuitive digital experiences. I began with frontend development because it allowed me to combine creativity with logic, and my projects and internships helped me learn how to turn ideas into real solutions. I actively use <strong>AI tools</strong> to accelerate my learning, explore better approaches, and strengthen my skills as a developer. I am now looking to grow into full-stack and software development, and I hope to find an opportunity where I can learn, contribute, and build meaningful systems.
+              I&apos;m Sarayu, a final-year CSE student actively seeking a React.js Developer internship. My strengths lie in building clean, responsive interfaces with React components, hooks, Context API, Tailwind, and motion-driven animations. Frontend development lets me merge creativity with technical logic, and I&apos;m expanding into full-stack skills to ship end-to-end solutions. I grow the most in teams that mentor, collaborate, and push each other to build better products. I&apos;m looking for an internship where I can contribute meaningfully while continuing to learn and evolve as a React developer.
             </p>
           </BentoCard>
 
@@ -117,20 +120,31 @@ export const BentoGrid = forwardRef<HTMLElement, BentoGridProps>(
                 <FaGithub className="mr-2" /> GitHub
               </a>
               <a
-                href="mailto:sarayu.ramdas04@gmail.com"
+                href={GMAIL_COMPOSE_URL}
                 className="underline hover:no-underline flex items-center"
+                target="_blank"
+                rel="noreferrer"
               >
                 <MdEmail className="mr-2" /> Email
               </a>
             </div>
-            <button
-              type="button"
-              onClick={downloadResume}
-              className="mt-4 inline-flex items-center justify-center gap-2 rounded-full border border-black/10 bg-black text-white px-4 py-2 text-xs font-semibold shadow-sm transition hover:-translate-y-0.5 hover:bg-black/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-black/40 disabled:cursor-not-allowed disabled:opacity-80"
-              disabled={isDownloading}
-            >
-              {isDownloading ? "Preparing download..." : "Download Resume"}
-            </button>
+            <div className="mt-4 flex flex-wrap items-center gap-3 justify-center">
+              <a
+                href={resumeUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-black/10 bg-black text-white px-4 py-2 text-xs font-semibold shadow-sm transition hover:-translate-y-0.5 hover:bg-black/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-black/40"
+              >
+                View Resume (PDF)
+              </a>
+              <a
+                href={resumeDownloadUrl}
+                download
+                className="text-xs font-semibold text-neutral-700 underline hover:no-underline"
+              >
+                Download PDF
+              </a>
+            </div>
           </BentoCard>
         </motion.div>
       </div>

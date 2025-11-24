@@ -1,42 +1,31 @@
-﻿"use client";
-import { useCallback, useState } from "react";
+"use client";
+import { useCallback } from "react";
 
-export const RESUME_EXPORT_URL = "https://docs.google.com/document/d/1vkqkk_midPK4CG6Gkv2u9O9fghq2FPsRhuV8c2XKb68/export?format=pdf";
+export const RESUME_VIEW_URL =
+  "https://docs.google.com/document/d/1vkqkk_midPK4CG6Gkv2u9O9fghq2FPsRhuV8c2XKb68/preview";
+export const RESUME_EXPORT_URL =
+  "https://docs.google.com/document/d/1vkqkk_midPK4CG6Gkv2u9O9fghq2FPsRhuV8c2XKb68/export?format=pdf";
 
 export function useResumeDownload(filename = "Sarayu_Ramdas_Resume.pdf") {
-  const [isDownloading, setIsDownloading] = useState(false);
+  const viewResume = useCallback(() => {
+    window.open(RESUME_VIEW_URL, "_blank", "noopener,noreferrer");
+  }, []);
 
-  const downloadResume = useCallback(async () => {
-    if (isDownloading) return;
+  const downloadResume = useCallback(() => {
+    const link = document.createElement("a");
+    link.href = RESUME_EXPORT_URL;
+    link.download = filename;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+  }, [filename]);
 
-    try {
-      setIsDownloading(true);
-      const response = await fetch(RESUME_EXPORT_URL, {
-        method: "GET",
-        cache: "no-store",
-        mode: "cors",
-      });
-
-      if (!response.ok) {
-        throw new Error("Failed to fetch resume");
-      }
-
-      const blob = await response.blob();
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement("a");
-      link.href = url;
-      link.download = filename;
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
-      URL.revokeObjectURL(url);
-    } catch (error) {
-      console.error("Resume download failed", error);
-      window.open(RESUME_EXPORT_URL, "_blank", "noopener");
-    } finally {
-      setIsDownloading(false);
-    }
-  }, [filename, isDownloading]);
-
-  return { isDownloading, downloadResume };
+  return {
+    viewResume,
+    downloadResume,
+    resumeUrl: RESUME_VIEW_URL,
+    resumeDownloadUrl: RESUME_EXPORT_URL,
+  };
 }

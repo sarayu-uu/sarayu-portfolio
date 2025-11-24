@@ -4,13 +4,14 @@ import { ExperienceCard } from "@/components/experience/Card";
 const EXPERIENCE_ITEMS = [
   {
     role: "Software Developer Intern",
-    stack: "React.js | Next.js | TypeScript | Tailwind CSS | GSAP",
+    stack: "React.js | Next.js | TypeScript | Tailwind CSS | GSAP | Framer Motion",
     company: "NorthNorth",
-    period: "Aug 2025 – Present",
+    period: "Aug 2025 - Present",
     points: [
-      "Contributing to client projects using React.js and modern web frameworks.",
-      "Collaborating with teams to build scalable and responsive applications.",
-      "Enhancing UI/UX and implementing best practices.",
+      "Implemented scalable front-end architecture using React hooks (useState, useEffect, useMemo, useRef) and Context API for shared global state.",
+      "Built reusable UI components with Tailwind and ensured pixel-perfect implementation of Figma designs.",
+      "Added GSAP/Framer-Motion animations to improve interactivity while maintaining high performance.",
+      "Optimized rendering, reduced unnecessary re-renders, and improved page responsiveness across multiple client applications.",
     ],
   },
   {

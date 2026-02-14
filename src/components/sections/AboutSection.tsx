@@ -15,10 +15,10 @@ export function AboutSection() {
         className="space-y-4"
       >
         <p className="text-lg leading-relaxed text-neutral-700">
-          I&rsquo;m Sarayu, a final-year CSE student at ICFAI Tech School, Hyderabad. I&rsquo;ve just completed my exams and am now looking for an internship where I can apply what I&rsquo;ve learned so far. I started with frontend development because it let me blend creativity with logic, and now I&rsquo;m steadily expanding toward full-stack and broader software development.
+          Software Developer Intern with foundational expertise in React.js and Next.js, currently expanding into AI-driven application development. Experienced in building responsive, scalable web interfaces and integrating intelligent features using Python, SQL, and Generative AI technologies. Actively strengthening knowledge in database systems, agentic AI architectures, and end-to-end AI workflows, with a focus on developing production-ready, data-informed applications.
         </p>
         <p className="text-lg leading-relaxed text-neutral-700">
-          I&rsquo;ve realized that I learn best when I&rsquo;m part of a team that shares ideas, mentors growth, and tackles challenges together. With the right guidance and environment, I&rsquo;m confident I can excel - and I&rsquo;m hoping to find a place where I can contribute meaningfully while continuing to grow.
+          Currently undergoing hands-on training in SQL, emphasizing efficient data querying, normalization principles, and performance optimization techniques. Enhancing Python proficiency through structured practice in scripting, data manipulation, and algorithmic problem-solving. Applying acquired concepts through mini-projects and task-based assignments to reinforce backend development capabilities and AI-assisted system design.
         </p>
         <div className="pt-4">
           <div className="flex flex-wrap items-center gap-3">

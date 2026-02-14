@@ -41,8 +41,7 @@ export const BentoGrid = forwardRef<HTMLElement, BentoGridProps>(
           >
             <h2 className="text-xl font-semibold mb-4">About Me</h2>
             <p className="text-neutral-700 text-sm sm:text-base leading-relaxed">
-              I&apos;m Sarayu, a final-year CSE student actively seeking a React.js Developer internship. My strengths lie in building clean, responsive interfaces with React components, hooks, Context API, Tailwind, and motion-driven animations. Frontend development lets me merge creativity with technical logic, and I&apos;m expanding into full-stack skills to ship end-to-end solutions. I grow the most in teams that mentor, collaborate, and push each other to build better products. I&apos;m looking for an internship where I can contribute meaningfully while continuing to learn and evolve as a React developer.
-            </p>
+            Software Developer Intern with knowledge in React.js and Next.js, currently transitioning into AI-driven application development. Experienced in building high-performance, scalable web interfaces and integrating intelligent features using Python, SQL, and Generative AI. Actively training in database systems, agentic AI, and end-to-end AI workflows, with a focus on production-ready, data-informed applications.            </p>
           </BentoCard>
 
           <BentoCard
@@ -88,11 +87,12 @@ export const BentoGrid = forwardRef<HTMLElement, BentoGridProps>(
           >
             <h2 className="text-xl font-semibold mb-2">Experience</h2>
             <p className="text-neutral-700 text-sm sm:text-base">
-              Software Developer Intern — <span className="text-xs sm:text-sm italic"><br />NorthNorth (Aug 2025 - Present)</span>
+              Intern — <span className="text-xs sm:text-sm italic"><br />Bilvantis Technologies (Dec 2025 - Present)</span>
             </p>
             <p className="text-neutral-700 text-sm sm:text-base">
-              Frontend Intern — <span className="text-xs sm:text-sm italic"><br />Cloudbox-99 (Jun 2024 - Aug 2024)</span>
+              Software Developer Intern — <span className="text-xs sm:text-sm italic"><br />NorthNorth (Aug 2025 - Dec 2025)</span>
             </p>
+            
           </BentoCard>
 
           <BentoCard

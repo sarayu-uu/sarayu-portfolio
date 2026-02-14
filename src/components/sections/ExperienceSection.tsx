@@ -3,6 +3,18 @@ import { ExperienceCard } from "@/components/experience/Card";
 
 const EXPERIENCE_ITEMS = [
   {
+    role: "Intern",
+    stack: "Python | Sql | Agentic AI | Gen AI",
+    company: "Bilvantis Technologies",
+    period: "Dec 2025 - Present",
+    points: [
+      "Undergoing hands-on training in SQL for data querying and performance optimization.",
+      "Developing Python skills for scripting, data handling, and problem-solving through practical exercises.",
+      "Applying learned concepts through mini-tasks and assignments to strengthen backend and AI-assisted development skills."
+
+    ],
+  },
+  {
     role: "Software Developer Intern",
     stack: "React.js | Next.js | TypeScript | Tailwind CSS | GSAP | Framer Motion",
     company: "NorthNorth",

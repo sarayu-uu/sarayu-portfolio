@@ -15,6 +15,21 @@
 
 export const projects: Project[] = [
   {
+    title: "Education-Employment Mismatch Analysis in India",
+    summary:
+      "End-to-end ML pipeline and Streamlit dashboard for analyzing education-employment mismatch across Indian regions.",
+    stack: "Python | scikit-learn | Streamlit | Plotly | NumPy | pandas",
+    desc: "Developed an end-to-end machine learning workflow on merged public Indian education, employment, economic, and job-market datasets to uncover mismatch patterns and support data-driven policy planning.",
+    bullets: [
+      "Built full pipeline stages including data integration, feature engineering, model training, and evaluation.",
+      "Compared LR, GBR, and Random Forest models to identify robust predictive performance.",
+      "Implemented interpretable driver analysis and regional trend/hotspot workflows.",
+      "Deployed insights through an interactive Streamlit dashboard for mismatch monitoring and policy-oriented decision support.",
+    ],
+    github: "https://github.com/sarayu-uu/eduvsemp",
+    badgeType: "python",
+  },
+  {
     title: "athENA (SIH hackathon)",
     summary: "Figma exploration for a student-focused productivity companion.",
     stack: "Figma | Product Design | UI/UX",

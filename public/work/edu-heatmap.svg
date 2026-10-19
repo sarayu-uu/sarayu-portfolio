@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Education versus employment: a regional mismatch heatmap">
+  <rect width="1600" height="900" fill="#10302a"/>
+  <text x="90" y="190" font-family="Georgia, serif" font-size="128" fill="#f4ede0">Degrees</text>
+  <text x="90" y="330" font-family="Georgia, serif" font-size="128" fill="#f4ede0">≠ <tspan fill="#fb923c" font-style="italic">jobs</tspan></text>
+  <text x="96" y="420" font-family="Helvetica, Arial, sans-serif" font-weight="600" font-size="30" letter-spacing="3" fill="#7fb8a8">REGIONAL MISMATCH · INDIA</text>
+
+  <!-- legend -->
+  <g transform="translate(96 700)">
+    <defs><linearGradient id="lg"><stop offset="0" stop-color="#1f5c4f"/><stop offset="1" stop-color="#fb923c"/></linearGradient></defs>
+    <rect width="420" height="26" rx="13" fill="url(#lg)"/>
+    <text y="72" font-family="Helvetica, Arial, sans-serif" font-size="28" fill="#7fb8a8">aligned</text>
+    <text x="420" y="72" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="28" fill="#7fb8a8">mismatch hotspot</text>
+  </g>
+
+  <!-- heatmap: 7 cols x 6 rows -->
+  <g transform="translate(760 110)">
+    <g fill="#1f5c4f">
+      <rect x="0" y="0" width="100" height="100" rx="14"/><rect x="112" y="0" width="100" height="100" rx="14"/><rect x="336" y="0" width="100" height="100" rx="14"/><rect x="560" y="0" width="100" height="100" rx="14"/><rect x="672" y="0" width="100" height="100" rx="14"/>
+      <rect x="0" y="112" width="100" height="100" rx="14"/><rect x="448" y="112" width="100" height="100" rx="14"/><rect x="672" y="112" width="100" height="100" rx="14"/>
+      <rect x="112" y="224" width="100" height="100" rx="14"/><rect x="560" y="224" width="100" height="100" rx="14"/>
+      <rect x="0" y="336" width="100" height="100" rx="14"/><rect x="336" y="336" width="100" height="100" rx="14"/><rect x="672" y="336" width="100" height="100" rx="14"/>
+      <rect x="0" y="448" width="100" height="100" rx="14"/><rect x="112" y="448" width="100" height="100" rx="14"/><rect x="448" y="448" width="100" height="100" rx="14"/><rect x="560" y="448" width="100" height="100" rx="14"/>
+      <rect x="0" y="560" width="100" height="100" rx="14"/><rect x="224" y="560" width="100" height="100" rx="14"/><rect x="336" y="560" width="100" height="100" rx="14"/><rect x="560" y="560" width="100" height="100" rx="14"/><rect x="672" y="560" width="100" height="100" rx="14"/>
+    </g>
+    <g fill="#3f8a6a">
+      <rect x="224" y="0" width="100" height="100" rx="14"/><rect x="448" y="0" width="100" height="100" rx="14"/>
+      <rect x="112" y="112" width="100" height="100" rx="14"/><rect x="560" y="112" width="100" height="100" rx="14"/>
+      <rect x="0" y="224" width="100" height="100" rx="14"/><rect x="672" y="224" width="100" height="100" rx="14"/>
+      <rect x="112" y="336" width="100" height="100" rx="14"/><rect x="560" y="336" width="100" height="100" rx="14"/>
+      <rect x="672" y="448" width="100" height="100" rx="14"/><rect x="112" y="560" width="100" height="100" rx="14"/><rect x="448" y="560" width="100" height="100" rx="14"/>
+    </g>
+    <g fill="#c9763a">
+      <rect x="224" y="112" width="100" height="100" rx="14"/><rect x="448" y="224" width="100" height="100" rx="14"/>
+      <rect x="448" y="336" width="100" height="100" rx="14"/><rect x="336" y="448" width="100" height="100" rx="14"/>
+    </g>
+    <g fill="#fb923c">
+      <rect x="336" y="112" width="100" height="100" rx="14"/><rect x="224" y="224" width="100" height="100" rx="14"/>
+      <rect x="336" y="224" width="100" height="100" rx="14"/><rect x="224" y="336" width="100" height="100" rx="14"/>
+      <rect x="224" y="448" width="100" height="100" rx="14"/>
+    </g>
+    <!-- hotspot ring -->
+    <rect x="212" y="100" width="236" height="460" rx="28" fill="none" stroke="#f4ede0" stroke-width="5" stroke-dasharray="14 12"/>
+  </g>
+</svg>

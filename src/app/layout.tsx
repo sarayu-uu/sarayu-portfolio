@@ -1,37 +1,28 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
-
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import LayoutClientWrapper from "@/components/LayoutClientWrapper";
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
+const serif = Instrument_Serif({
+  variable: "--font-serif",
   subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
-  title: "Sarayu Ramdas | Portfolio",
+  title: "Sarayu Ramdas | AI product designer & developer",
   description:
-    "Frontend-focused developer crafting smooth interfaces with React, Next.js, and motion design.",
+    "I design and build AI products, then find out whether people actually use them. Voice agents, computer-vision play for kids, RAG and LLM governance.",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <LayoutClientWrapper>{children}</LayoutClientWrapper>
+      <body className={`${inter.variable} ${serif.variable}`}>
+        {children}
         <Analytics />
         <SpeedInsights />
       </body>

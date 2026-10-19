@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Rock paper scissors: a webcam view of a hand with its convex hull and convexity defects marked">
+  <rect width="1600" height="900" fill="#241747"/>
+  <defs><pattern id="scan" width="6" height="6" patternUnits="userSpaceOnUse"><rect width="6" height="2" fill="#ffffff" fill-opacity="0.03"/></pattern></defs>
+  <rect width="1600" height="900" fill="url(#scan)"/>
+
+  <!-- left copy -->
+  <text x="90" y="170" font-family="Courier New, monospace" font-weight="700" font-size="30" letter-spacing="4" fill="#a78bfa">● LIVE · OPENCV</text>
+  <text x="90" y="300" font-family="Georgia, serif" font-size="120" fill="#f5f3ff">Rock.</text>
+  <text x="90" y="430" font-family="Georgia, serif" font-size="120" fill="#f5f3ff">Paper.</text>
+  <text x="90" y="560" font-family="Georgia, serif" font-size="120" font-style="italic" fill="#4ade80">Read.</text>
+
+  <!-- scoreboard -->
+  <g transform="translate(90 650)" font-family="Courier New, monospace" font-weight="700">
+    <rect width="470" height="130" rx="16" fill="#120b28" stroke="#a78bfa" stroke-opacity="0.5" stroke-width="3"/>
+    <text x="40" y="84" font-size="52" fill="#f5f3ff">YOU</text>
+    <text x="235" y="84" text-anchor="middle" font-size="44" fill="#a78bfa">vs</text>
+    <text x="430" y="84" text-anchor="end" font-size="52" fill="#4ade80">AI</text>
+  </g>
+
+  <!-- webcam frame -->
+  <g fill="none" stroke="#f5f3ff" stroke-width="7" stroke-linecap="round">
+    <path d="M700 150 v-50 h60"/><path d="M1460 150 v-50 h-60"/>
+    <path d="M700 760 v50 h60"/><path d="M1460 760 v50 h-60"/>
+  </g>
+
+  <!-- hand -->
+  <g fill="#c4b5fd" fill-opacity="0.9">
+    <rect x="950" y="470" width="300" height="270" rx="70"/>
+    <rect x="955" y="250" width="62" height="290" rx="31"/>
+    <rect x="1025" y="210" width="62" height="330" rx="31"/>
+    <rect x="1095" y="240" width="62" height="300" rx="31"/>
+    <rect x="1165" y="300" width="58" height="240" rx="29"/>
+    <rect x="850" y="430" width="62" height="200" rx="31" transform="rotate(-35 910 610)"/>
+  </g>
+
+  <!-- convex hull -->
+  <polygon points="782,482 986,250 1056,210 1126,240 1194,300 1250,520 1250,740 950,740 850,650"
+    fill="none" stroke="#4ade80" stroke-width="6" stroke-linejoin="round"/>
+
+  <!-- convexity defects -->
+  <g fill="#f43f5e" stroke="#241747" stroke-width="5">
+    <circle cx="935" cy="520" r="16"/><circle cx="1021" cy="525" r="16"/>
+    <circle cx="1091" cy="525" r="16"/><circle cx="1161" cy="525" r="16"/>
+  </g>
+  <path d="M1161 525 L 1330 600" stroke="#f43f5e" stroke-width="4"/>
+  <g transform="translate(1260 600)">
+    <rect width="210" height="74" rx="12" fill="#f43f5e"/>
+    <text x="105" y="48" text-anchor="middle" font-family="Courier New, monospace" font-weight="700" font-size="30" fill="#ffffff">4 gaps</text>
+  </g>
+  <text x="1260" y="720" font-family="Courier New, monospace" font-weight="700" font-size="36" fill="#4ade80">= PAPER</text>
+</svg>
